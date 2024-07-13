@@ -1,11 +1,15 @@
 #![allow(unused)]
 
-const YOU_CAN_DECLARE_A_CONSTANT_HERE: i32 = 45;
-
+// shadowing is not the same as marking a variable as mutable
 fn main() {
-    println!("Hello, world");
-    const Y: i8 = 5; // upper case
-                     // constant is immutable throughout it's lifecycle
-                     // you cannot mutate it
-                     // always have to provide type for it
+    let x = 5;
+    let x = x + 2;
+    {
+        // here
+        let x = x + 1;
+        println!("Value of x is {}", x);
+    } // here
+    println!("Hello world");
+
+    println!("Value of x is outside scope is {}", x);
 }

@@ -1,28 +1,23 @@
 #![allow(unused)]
 
-fn calculate_length(s: &String) -> usize {
+/*
+References: Enable you to borrow values without taking ownership
+Types:
+1. Immutable References
+2. Mutable References
+Create a reference by simply adding "&"
+*/
+
+fn calculate_len(s: &String) -> usize {
     s.len()
 }
 
-// Each variable has it's own owner
-// fn main() {
-//     let s1 = String::from("Rust");
-//     let len = calculate_length(&s1);
-//     println!("Length of {} is {}", s1, len);
-// }
-
-// At any given time, there could only be one owner of a variable
-// fn main() {
-//     let s = String::from("RUST");
-//     let s2 = s;
-//
-//     // println!("{}", s2);
-// }
-
+// You can either have one mutable reference or many immutable references
 fn main() {
-    let s = String::from("Rust");
-    let len = calculate_length(&s);
-    println!("Length of {} is {}", s, len);
+    let mut x: i32 = 5;
+    // creating immutable reference to x
+    let r = &mut x; // transferring whole object
+                    // let b = &x;
+    *r += 1;
+    *r += 1;
 }
-
-// hello copilot

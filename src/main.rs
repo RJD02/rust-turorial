@@ -12,11 +12,17 @@ fn calculate_length(s: &String) -> usize {
 // }
 
 // At any given time, there could only be one owner of a variable
-fn main() {
-    let s = String::from("RUST");
-    let s2 = s;
+// fn main() {
+//     let s = String::from("RUST");
+//     let s2 = s;
+//
+//     // println!("{}", s2);
+// }
 
-    // println!("{}", s2);
+fn main() {
+    let s = String::from("Rust");
+    let len = calculate_length(&s);
+    println!("Length of {} is {}", s, len);
 }
 
 // hello copilot
